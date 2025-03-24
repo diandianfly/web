@@ -1,0 +1,1124 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    max-width: 100%;
+    max-height: 100%;
+    display: block;
+    object-fit: scale-down;
+}
+
+body{
+    background-image: url(../image/backgroundimg.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    margin: 0;
+}
+.header{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    background: black;
+    z-index: 100;
+}
+.menubox{
+    display: none;
+    top: 70px;
+    width: 100%;
+    height: 500px;
+    background-color: #000;
+    z-index: 200;
+    position: absolute;
+}
+.menubox a{
+    text-decoration: none;
+    color: white;
+}
+.menubox ul{
+    text-align: center;
+}
+.menubox li{
+    padding: 20px 0;
+}
+.navbar{
+    max-width:1440px;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+}
+.logo img{
+    height: 50px;
+}
+
+nav ul{
+    display: flex;
+    list-style:none;
+    margin: 0;
+    padding: 0; 
+}
+nav ul li{
+    margin: 0 15px;
+}
+nav ul li a{
+    text-decoration: none;
+    color:white;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    padding-bottom: 8px;
+    border-bottom: 2px solid white;
+}
+/* 輪播區塊 */
+.banner-slider{
+    position: relative;
+    width: 100%;
+    height: 80vh;
+    overflow: hidden;
+}
+/* 單個bn */
+.banner{
+    position: relative;
+    width: 100%;
+}
+.banner img{
+    object-fit: fill;
+ }
+
+/* 圓點樣式 */
+.slick-dot{
+    bottom:15px;
+}
+.slick-dots li button:before{
+    font-size: 12px;
+    color:white;
+}
+/* 左右箭頭樣式 */
+.slick-prev, .slick-next{
+    position: absolute;
+    top: 50%;
+    transform:translateY(-50%);
+    z-index: 10;
+    background: white;
+    color: black;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    font-size: 0;
+    align-items: center;
+    justify-content: center;
+    object-fit: fill;
+}
+/* 自訂 Slick 箭頭圖標 */
+.slick-next::before{
+    content:'';  
+}
+.slick-prev::before{
+    content:'';
+}
+.slick-prev{
+    left: 60px;
+}
+.slick-next{
+    right:60px
+}
+/* bn文字 */
+.banner-content{
+    position: absolute;
+    bottom: 40%;
+    left: 10%;
+    color: white;
+    padding: 20px;
+    text-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8); /* 加強對比的陰影 */
+}
+.banner-content h2 {
+    font-size: 36px;
+    font-weight: bold;
+}
+.banner-content p{
+    font-size: 24px;
+    margin-top:10px;
+}
+.banner-content span{
+    font-size: 12px;
+}
+
+/* 底部弧形圖片 */
+.wave-overlay{
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 80;
+}
+/* 裝飾標題 */
+.title{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+
+}
+.title .en{
+    font-size: 14px;
+    color: #a47940;
+    width: max-content;
+    font-family: 'Times New Roman', Times, serif;
+}
+.title .zh{
+    font-size: 24px;
+    color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* 左側裝飾橫線 */
+.title::before{
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 50%;
+    transform: translateY(-50%);
+    width:100px;
+    height: 64px;
+    background-image: url(../image/圓圈.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* 右側箭頭 */
+.title .zh::after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 9px;
+    background-image: url(../image/三角.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+
+/* 藝文輪播區塊 */
+.art-news{
+    margin-bottom: 60px;
+}
+.news-slider{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-end; 
+    margin-bottom: 20px;
+}
+.news-item{
+    position: relative;
+}
+.news-item.slick-slide img{ 
+    height: 16rem; 
+    transition: all .5s;
+    margin: auto;
+    object-fit: cover; 
+    padding: 2rem 0;
+    aspect-ratio: 1.2/1;
+} 
+
+.news-item.slick-slide.slick-active.slick-center img{
+    padding: 0;
+    aspect-ratio: 1.8/1;
+}
+
+.news-text{
+    width: 60%;
+    bottom: 2rem;
+    right: 20%;
+    color: white;   
+    display: flex;
+    flex-direction: column; 
+    position: absolute; 
+    align-items: flex-end;
+    padding: 10px 4px;
+    margin: auto;  
+}
+
+.news-item.slick-active.slick-center .news-text{
+    width: 90%;
+    transform: translate(50%);
+    bottom: 1rem; 
+    right: 50%;
+}
+
+.news-content,.news-conten-c{
+    padding: 0 12px;
+}
+.news-text h3,.news-tex-c h3{
+    font-size: 12px;
+}
+.news-text p,.news-tex-c p{
+    font-size: 12px;
+    line-height: 1.3rem;
+}
+.news-text a,.news-tex-c a{
+    text-decoration: none;
+    color: white;
+    font-size: 12px;
+}
+.video{
+     display: flex;
+     justify-content: center;
+     gap: 20px;
+}
+.video iframe{
+    width: 473px;
+    aspect-ratio:16/9;
+}
+/* 本週活動區塊 */
+.weeknews{
+    background-image: url(../image/水墨.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    min-height: 550px;
+    max-width: 1920px;
+    padding: 100px 50px;
+    margin-top: 20px;
+    color: white;
+    
+}
+/* 裝飾標題 */
+.news-header{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+}
+.news-header .zh{
+    font-size: 24px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-items: center;
+}
+.news-header .en{
+    font-size: 14px;
+    color: white;
+    width: max-content;
+    font-family: 'Times New Roman', Times, serif;
+}
+/* 左側裝飾線 */
+.news-header::before{
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 20%;
+    transform: translateY(-50%);
+    width:100px;
+    height: 64px;
+    background-image: url(../image/圓圈白.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+.news-header .zh::after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 9px;
+    background-image: url(../image/三角白.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.news-container{
+  position: relative;
+  padding-bottom: 60px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.news-containerbox{
+    max-width: 1280px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;   
+}
+.news-info{
+    width: 270px;
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #A87B47;
+    display: flex;
+    flex-direction: column;
+}
+.info-block h4{
+    font-size: 16px;
+    color: white;
+    background-color:#A87B47;
+    padding: 10px 20px;
+    margin: 0;
+    display: flex;
+}
+.infobox{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    padding: 10px;
+}
+.infobox .box{
+    display: flex;
+    padding: 8px 0px;
+}
+.infobox span{
+    font-weight: bold;
+    color: #A87B47;
+    display: inline-block;
+}
+.infobox p{
+    font-size: 16px;
+    color: white;
+    margin: 0;
+}
+.update-button{
+    display: block;
+    width: 100%;
+    background: rgba(144, 144, 144, 0.5);
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bold;
+    border: 1px solid #A87B47;
+    margin-top: auto;
+}
+/* 最新消息list */
+.news-list{
+    flex-grow: 1;
+    max-width: 972px;
+}
+.list-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 15px;
+    background: rgba(255,255,255,0.1);
+    border-bottom: 1px solid white;
+}
+.item{
+    display: flex;
+    gap: 28px;
+    align-items: center;
+}
+.newstitle{
+    color: white;
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.news-more{
+    color: white;
+    text-decoration: none;
+}
+.news-footer{
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 20px;
+    position: absolute;
+    bottom: 20px;
+    right: 0px;
+
+}
+.news-footer a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+.news-footer a::before{
+    content: "";
+    display: block;
+    width: 50px;
+    height: 1px;
+    background-color: white;
+    margin-right: 20px;
+}
+/* 校園訊息 */
+/* 裝飾標題 */
+.schooltitle{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+    margin-top:  60px; 
+}
+.schooltitle .en{
+    font-size: 14px;
+    color: #a47940;
+    width: max-content;
+    font-family: 'Times New Roman', Times, serif;
+}
+.schooltitle .zh{
+    font-size: 24px;
+    color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* 左側裝飾橫線 */
+.schooltitle::before{
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 20%;
+    transform: translateY(-50%);
+    width:100px;
+    height: 64px;
+    background-image: url(../image/圓圈.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* 右側箭頭 */
+.schooltitle .zh::after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 9px;
+    background-image: url(../image/三角.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.school .schooltab{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.school .schooltab button{
+    background-color: transparent;
+    border:1px solid #000;
+    padding: 4px 12px;
+}
+.schooltab .tab-btn:hover{
+    background-color: #000;
+    color: white;
+}
+/* tab :active */
+.schooltab .tab-btn.active{
+    background-color: #000;
+    color: white;
+}
+.school-container{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+ 
+.school-card{
+    background-color: white;
+    overflow: hidden;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+}
+
+.school-card img{
+    width: 300px; 
+    aspect-ratio: 1/1.1; 
+    object-fit: cover;
+}
+
+.school-text .n{
+    width:60px;
+    font-weight: bold;
+    background: linear-gradient(to right, #28a9ff, #ff1c9c);
+    background-clip: text;
+    -webkit-background-clip: text; /* 讓背景應用於文字 */
+    color: transparent; 
+    padding: 4px 0px;
+}
+.school-text{
+    padding: 12px;
+}
+.school-text .date{
+    color: #7B7B7B;
+    padding: 4px 0px;
+}
+.school-text p{
+    color: #7B7B7B;
+    padding: 4px 0px;
+}
+.school-text h3{
+    color: #000;
+    font-weight: bold;
+    padding: 4px 0px;
+    line-height: 1.2rem;
+}
+.alumni-title{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+    margin-top:  60px; 
+}
+.alumni-title .en{
+    font-size: 14px;
+    color: #a47940;
+    font-family: 'Times New Roman', Times, serif;
+    width: max-content;
+}
+.alumni-title .zh{
+    font-size: 24px;
+    color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* 左側裝飾橫線 */
+.alumni-title::before{
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 20%;
+    transform: translateY(-50%);
+    width:100px;
+    height: 64px;
+    background-image: url(../image/圓圈.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* 右側箭頭 */
+.alumni-title .zh::after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 9px;
+    background-image: url(../image/三角.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.alumni-slider{
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+    margin: 0 auto;
+    margin-bottom: 60px;
+    width: 90%;
+    align-items: stretch;
+    padding-bottom: 100px;
+}
+
+.alumni{
+    position: relative;
+}
+
+.alumni .slick-prev {
+    left: 0;
+    top: 40%;
+}
+.alumni .slick-next {
+    right: 0;
+    top: 40%;
+}
+.alumni-card:nth-child(odd) {
+    transform: translateY(20px);
+}
+.alumni-card:nth-child(even) {
+    transform: translateY(-30px);
+}
+.alumni-card{
+    position: relative;
+    margin: 20px;
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+}
+
+.alumni-img{
+    position: relative;
+}
+.alumni-text{
+    width: 300px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 12px ;
+    position:relative;
+    top: -50px;  
+    left: -30px;    
+}
+.alumni-text h3{
+    color: #000;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 1.3rem;
+}
+.alumni-text p{
+    color: #a47940;
+    font-size: 16px;
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.2rem;
+    padding-bottom: 8px;
+}
+.alumni-text span{
+    font-size: 20px;
+    color: #000;
+    line-height: 1.5rem;
+}
+.alumni-text .work{
+    padding: 16px 0 0 0 ;
+    list-style: none;
+    line-height: 1.4rem;
+}
+.alumni-text .work li::before{
+    content: "•";
+    color: #000;
+    font-size: 16px;
+    margin-right: 8px;
+}
+.arc{
+    background-image: url(../image/上弧形.png);
+    background-size: cover;
+    background-position: center;
+    height: 99px;
+}
+.education-box{ 
+    background-color: white;
+}
+.education-title{
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    width: fit-content;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 4px;
+    margin: 0 auto;
+    padding: 0 0 60px 0;
+    margin-top: -30px;
+}
+.education-title .en{
+    font-size: 14px;
+    color: #a47940;
+    font-family: 'Times New Roman', Times, serif;
+    width: max-content;
+}
+.education-title .zh{
+    font-size: 24px;
+    color: #000;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+/* 左側裝飾橫線 */
+.education-title::before{
+    content: "";
+    position: absolute;
+    left: -60px;
+    top: 20%;
+    transform: translateY(-50%);
+    width:100px;
+    height: 64px;
+    background-image: url(../image/圓圈.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+/* 右側箭頭 */
+.education-title .zh::after{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 9px;
+    background-image: url(../image/三角.png);
+    background-size:contain;
+    background-repeat: no-repeat;
+    margin-left: 8px;
+    vertical-align: middle;
+}
+.college{
+    display: flex;
+    max-width: 1364px;
+    margin: 0 auto;
+    gap: 30px;
+}
+.college-pic0{
+    background-image: url(../image/美術學院.png);
+    width: 245px;
+    height: 245px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.college-pic1{
+    background-image: url(../image/設計學院.png);
+    width: 245px;
+    height: 245px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.college-pic2{
+    background-image: url(../image/傳播學院.png);
+    width: 245px;
+    height: 245px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.college-pic3{
+    background-image: url(../image/表演音樂h.png);
+    width: 245px;
+    height: 245px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.college-pic4{
+    background-image: url(../image/人文學院.png);
+    width: 245px;
+    height: 245px;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    color: white;
+    text-align: center;
+    justify-content: center;
+}
+.collegepic-text{
+    font-size: 24px;
+}
+.collegepic-text .line{
+    display: block;
+    width: 50px;
+    height: 2px;
+    background-color: white;
+    margin: 8px auto; 
+}
+.collegepic-text h4{
+    font-size: 24px;
+    margin-bottom: 12px;
+}
+.collegepic-text p{
+    line-height: 1.3rem;
+    font-size: 16px;
+}
+.college-text{
+    margin-top: 60px;
+    max-width: 1280px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+.college-title{
+    text-align: center;
+    margin: 40px 0;   
+}
+.college-title h3{
+    font-size: 24px;
+    font-weight: bold;
+    color: #A87B47;
+    line-height: 1.4;
+}
+.college-title span{
+    font-family: 'Times New Roman', Times, serif;
+    color: #000;
+}
+.college-text p{
+    display: flex;
+    align-items: flex-start;
+    padding: 20px;
+}
+.department-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+.department-item{
+    padding: 20px;
+}
+.department-head{
+    border-top:1px solid black;
+    border-bottom: 1px solid black;
+    padding: 20px 30px ;
+    font-weight: bold;
+    color: #000;
+    display: flex;
+    justify-content: space-around;
+}
+.department-head .arrow-btn{
+    background-color: #000;
+    color: white;
+    height: 16px;
+    width: 40px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    margin-left:8px;
+}
+.department-list a{
+    text-decoration: none;
+    color: #000;
+    padding: 20px 30px;
+}
+.department-list li{
+    padding: 16px 0px;
+}
+.department-list .arrow{
+    margin-left: 20px;
+    color: #A87B47;
+}
+.btn-closebox{
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    justify-content: center; 
+    gap: 16px; 
+    width: 100%; 
+}
+.btnToggle{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    width: 150px;
+    height: 40px;
+    color: white;
+    text-align: center;
+    border: none;
+    margin-bottom: 60px;
+}
+.btnToggle::before{ 
+    content: "收合";
+    margin-right: 16px;
+}
+.btnToggle.open img{
+    transform: rotate(180deg);
+}
+.btnToggle.open::before{
+    content: "展開";
+}
+.closeline{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    height: 1px;
+    background-color: #000;
+    margin-bottom: 60px;
+}
+.promotion-box{
+    background-color: white;
+    padding-bottom: 60px;    
+}
+.promotion-inbox{
+    display: flex;
+    gap: 20px;
+    max-width: 1280px;
+    justify-content: space-between;
+    margin: 0 auto; 
+
+}
+.promotion{
+    background-image: url(../image/推廣教育.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
+    height: 350px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+.promotion-title{
+    width: 310px;
+    height: 140px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.promotion-title p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.promotion-title h3{
+    font-size: 40px;
+    line-height: 1.4;
+}
+.promotion-list li{
+    padding: 16px 0;
+}
+.promotion-list a{
+    text-decoration: none;
+    color: white;
+    padding: 16px;
+}
+.promotion-list a span{
+    margin-left: 30px;
+}
+.teacher{
+    background-image: url(../image/師資學程.png);
+    background-size: cover;
+    background-position: center;
+    flex-grow: 1;
+    height: 350px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.teacher-title p{
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 1.4;
+}
+.teacher-title h3{
+    font-size: 40px;
+    line-height: 1.4;
+}
+
+.footer{
+    background-image: url(../image/footer.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: white;
+    height: 629px;
+}
+.footer-box{
+    height: 495px;
+    color:white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+    max-width: 1280px;
+    margin: 0 auto;
+}
+.footer-map{
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+}
+.footer-contect h4{
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 1.4;
+    padding: 8px 0;
+}
+.footer-contect p{
+    font-size: 16px;
+    line-height: 1.4;
+}
+.footer-map .text a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    line-height: 2rem;
+    margin: 0 8px;
+}
+.footer-map .line{
+    background-color: white;
+    height: 200px;
+    width: 1px;
+}
+.footer-store{
+    flex-direction: column;
+    width: 100%;
+}
+.store-list{
+    display: flex;
+    max-width: 1280px;
+    gap: 16px;
+    flex-grow: 1;
+    margin: 16px 0;
+}
+.footer-info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100% ;
+}
+.footer-info .links a{
+    text-decoration: none;
+    color: white;
+    margin: 0 8px;
+}
+.footer-info .links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+.footer-info .links img{
+    margin: 0 8px;
+    width: 80%;
+}
+
